@@ -1,5 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
-import Index from "./views/Index";
+import { Index } from "~/views";
+import { Font, ResetCSS } from "~/theme/index";
 
-ReactDOM.render(<Index />, document.getElementById("MovieFinder"));
+ReactDOM.render(
+  <Fragment>
+    <Index />
+    <ResetCSS />
+    <Font />
+  </Fragment>,
+  document.getElementById("MovieFinder")
+);

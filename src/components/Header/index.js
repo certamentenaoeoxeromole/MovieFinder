@@ -1,4 +1,10 @@
 import React from "react";
-const Header = () => <div>header</div>;
+import { HeaderContainer, HeaderHat } from "./styled";
+
+const Header = () => (
+  <HeaderContainer>
+    <HeaderHat>Movies</HeaderHat>
+  </HeaderContainer>
+);
 
 export default Header;
