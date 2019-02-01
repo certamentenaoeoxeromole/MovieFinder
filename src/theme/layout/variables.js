@@ -10,3 +10,8 @@ export const variablesFonts = {
   abel: "'Abel', sans-serif",
   lato: "'Lato', sans-serif;"
 };
+
+export const media = {
+  screenSmMin: "576px",
+  screeenLgMin: "1200px"
+};
