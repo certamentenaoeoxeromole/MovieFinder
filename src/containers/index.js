@@ -1,4 +1,6 @@
-import Search from "~/containers/Search";
-import CardList from "~/containers/CardList/index";
+import Search from "./Search/index";
+import CardList from "./CardList/index";
+import Tags from "./Tags/index";
+import Movie from "./Movie/index";
 
-export { Search, CardList };
+export { Search, CardList, Tags, Movie };

@@ -3,7 +3,9 @@ export const variablesColors = {
   blueLight: "#00E8E4",
   blueDark: "#116193",
   gray: "#EBEBEB",
-  defaultColorText: "#333"
+  defaultColorText: "#333",
+  dateTextColor: "#a19393",
+  sinopseTextColor: "#6b6762"
 };
 
 export const variablesFonts = {

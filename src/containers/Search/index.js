@@ -9,7 +9,6 @@ class Search extends Component {
   render() {
     const { searchValue } = this.props.state;
     const { handleSearch } = this.props;
-    console.log(this.props);
     return (
       <SearchInput
         type="text"

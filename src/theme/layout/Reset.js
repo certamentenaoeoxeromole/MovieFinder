@@ -44,6 +44,19 @@ const ResetCSS = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
     }
-`;
+
+     a {text-decoration:none}
+
+    a:link {
+        color: unset;
+    }       
+
+    a:visited {
+        color: unset;
+    }a:hover,                  
+    a:active                
+    {text-decoration:none;
+    color:  unset;}
+    `;
 
 export default ResetCSS;

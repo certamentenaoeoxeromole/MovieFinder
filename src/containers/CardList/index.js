@@ -1,17 +1,21 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Card } from "~/components/index";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const RenderCard = movie =>
   movie &&
   movie.map(info => {
-    return <Card {...info} />;
+    return (
+      <Link to={`/single/${info.id}`}>
+        <Card {...info} key={info.id} />
+      </Link>
+    );
   });
 
 const CardList = props => {
-  const Card = props.state.movies && props.state.movies.results;
-  console.log(props);
-  return RenderCard(Card) || <div />;
+  const card = props.state.movies && props.state.movies.results;
+  return <section>{RenderCard(card)}</section> || <Fragment />;
 };
 
 const mapStateToProps = state => ({

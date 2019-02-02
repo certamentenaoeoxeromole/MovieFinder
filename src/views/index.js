@@ -1,3 +1,5 @@
-import Index from "~/views/Index/index";
+import Template from "~/views/Template/index";
+import Single from "~/views/Single/index";
+import MoviesList from "~/views/MoviesList/index";
 
-export { Index };
+export { Template, MoviesList, Single };
