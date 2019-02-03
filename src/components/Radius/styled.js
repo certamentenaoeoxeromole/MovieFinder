@@ -35,6 +35,15 @@ export const RadiusContainer = styled.div`
 
   
   `}
+
+  ${({ pagination }) =>
+    pagination
+      ? `
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px 0px 0px 2px ${variablesColors.blueDark};
+  `
+      : null}
 `;
 
 export const RadiusHat = styled.h4`

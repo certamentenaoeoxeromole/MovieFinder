@@ -16,6 +16,6 @@ export const variablesFonts = {
 };
 
 export const media = {
-  screenSmMin: "576px",
+  screenSmMin: "768px",
   screeenLgMin: "1200px"
 };

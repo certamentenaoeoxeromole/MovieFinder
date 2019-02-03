@@ -11,9 +11,9 @@ const RenderCard = (movie, props) => {
   }
   return (
     movie &&
-    movie.map(info => {
+    movie[props.state.pagination.currentPagination].map((info, index) => {
       return (
-        <Link to={`/single/${info.id}`}>
+        <Link to={`/single/${info.id}`} key={index}>
           <Card {...info} key={info.id} />
         </Link>
       );
@@ -22,7 +22,7 @@ const RenderCard = (movie, props) => {
 };
 
 const CardList = props => {
-  const card = props.state.movies && props.state.movies.results;
+  const card = props.state.pagination && props.state.pagination.movies;
   return <section>{RenderCard(card, props)}</section> || <Fragment />;
 };
 

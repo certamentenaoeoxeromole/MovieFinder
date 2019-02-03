@@ -16,3 +16,13 @@ export const getApiMovie = id => ({
   type: Types.REQUEST_MOVIE_API,
   payload: { id }
 });
+
+export const setPagination = page => {
+  console.log("enter");
+  return {
+    type: Types.SET_PAGINATION,
+    payload: {
+      currentPagination: page
+    }
+  };
+};

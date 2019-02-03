@@ -12,14 +12,13 @@ class Tags extends Component {
 
   renderTag = () => {
     const { genres } = this.props.state;
-    console.log(this.props.genresIds);
     if (genres) {
       return genres
         .filter((genre, index) => {
           return genre.id === this.props.genresIds[index];
         })
         .map((item, index) => (
-          <TagsContainer key={index + 1}>
+          <TagsContainer key={index}>
             <TagsHat>{item.name}</TagsHat>
           </TagsContainer>
         ));

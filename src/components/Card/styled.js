@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { variablesColors, variablesFonts } from "~/theme/index";
+import { variablesColors, variablesFonts, media } from "~/theme/index";
 
 const headerHeight = "80px";
 
@@ -7,18 +7,25 @@ export const LetContainer = styled.div`
   padding: 0 20px;
 `;
 export const CardContaienr = styled.article`
+  flex-direction: column;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
 
+  @media (min-width: ${media.screenSmMin}) {
+    flex-direction: row;
+  }
   margin-bottom: 20px;
 `;
 
 export const CardImage = styled.img`
-  width: 342px;
-  height: 492px;
+  width: 100%;
   overflow: unset;
   flex: 0 0 342px;
+
+  @media (min-width: ${media.screenSmMin}) {
+    width: 342px;
+    height: 492px;
+  }
 `;
 
 export const CardContent = styled.div`
@@ -51,7 +58,7 @@ export const CardHat = styled.h2`
   color: ${variablesColors.blueLight};
   font-family: ${variablesFonts.abel};
   font-size: 30px;
-  width: calc(100% -130px);
+  width: calc(100% - 130px);
   position: relative;
   left: 130px;
 `;

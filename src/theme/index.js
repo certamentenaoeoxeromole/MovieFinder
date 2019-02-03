@@ -1,7 +1,15 @@
-import Font from "~/theme/layout/Font";
-import ResetCSS from "~/theme/layout/Reset";
-import { variablesColors, variablesFonts } from "~/theme/layout/variables";
-import Container from "~/theme/layout/Container";
-import Flex from "~/theme/layout/Flex";
+import Font from "./layout/Font";
+import ResetCSS from "./layout/Reset";
+import { variablesColors, variablesFonts, media } from "./layout/variables";
+import Container from "./layout/Container";
+import Flex from "./layout/Flex";
 
-export { Font, ResetCSS, variablesColors, variablesFonts, Container, Flex };
+export {
+  Font,
+  ResetCSS,
+  variablesColors,
+  variablesFonts,
+  Container,
+  Flex,
+  media
+};

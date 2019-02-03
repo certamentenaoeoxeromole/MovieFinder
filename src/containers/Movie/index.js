@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -102,15 +101,19 @@ class Movie extends Component {
               </div>
               <Radius value={popularity} single={true} />
             </Informations>
-            <Banner src={`http://image.tmdb.org/t/p/w500//${poster_path}`} />
+            <picture>
+              <source
+                srcSet={`http://image.tmdb.org/t/p/w780//${poster_path}`}
+                media="(min-width: 481px) and (max-width:767px)"
+              />
+              <Banner src={`http://image.tmdb.org/t/p/w500//${poster_path}`} />
+            </picture>
           </MovieContent>
         </MovieContainer>
       );
     }
   };
   render() {
-    console.log(this.comp);
-    console.log(this.props.state.currentMovie);
     return this.renderSingle() || <List />;
   }
 }

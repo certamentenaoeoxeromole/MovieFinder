@@ -2,6 +2,8 @@ import { takeLatest, takeEvery, put, call, delay } from "redux-saga/effects";
 import api from "~/services/api";
 import { movies, genres, movie } from "~/services/paths";
 
+import moviePagination from "./moviePagination";
+
 import Types from "~/redux/types/index";
 
 function* getApiData(data) {
@@ -13,9 +15,12 @@ function* getApiData(data) {
     yield put({ type: Types.REQUEST_SEACH_API });
     yield delay(1000);
     const response = yield call(api.get, movies.options.url + query);
+
+    const moviesPagination = moviePagination(response);
+
     yield put({
       type: Types.SUCESS_SEARCH_API,
-      payload: { movies: response.data }
+      payload: { movies: response.data, ...moviesPagination }
     });
   } catch (error) {
     yield put({
@@ -51,6 +56,7 @@ function* getMovieDetails({ payload }) {
   try {
     const { options } = movie(payload.id);
     const response = yield call(api.get, options.url);
+
     yield put({
       type: Types.SUCESS_MOVIE_API,
       payload: {

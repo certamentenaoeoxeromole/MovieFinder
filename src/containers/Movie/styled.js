@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { variablesColors } from "~/theme/index";
+import { variablesColors, media } from "~/theme/index";
 
 export const MovieHeader = styled.header`
   background-color: ${variablesColors.grayDark};
@@ -21,7 +21,7 @@ export const MovieHat = styled.h2`
 export const MovieDescription = styled.p`
   color: ${variablesColors.sinopseTextColor};
   margin: 20px 0 40px 0;
-  font-size: 23px;
+  font-size: 18px;
 `;
 
 export const MovieTitle = styled.h2`
@@ -36,16 +36,15 @@ export const MovieContainer = styled.section``;
 
 export const MovieContent = styled.article`
   display: flex;
+  flex-direction: column;
+  @media (min-width: ${media.screeenLgMin}) {
+    flex-direction: row;
+  }
 `;
 export const DataBlock = styled.div`
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   margin-top: 20px;
-  text-align: center;
-
-  :not(:nth-child(1)) {
-    margin-left: 30px;
-  }
 
   > div {
     &:nth-child(1) {
@@ -57,20 +56,40 @@ export const DataBlock = styled.div`
       margin-top: 5px;
     }
   }
+
+  @media (min-width: ${media.screeenLgMin}) {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+
+    :not(:nth-child(1)) {
+      margin-left: 30px;
+    }
+  }
 `;
 export const DataItem = styled.div``;
 
 export const Informations = styled.div`
   background-color: ${variablesColors.gray};
-  width: calc(100% - 466.66px);
-  height: 700px;
-  padding: 40px;
+  width: 100%;
+  padding: 20px;
   position: relative;
 
   display: inline-block;
+  order: 2;
+  @media (min-width: ${media.screeenLgMin}) {
+    width: calc(100% - 466.66px);
+    height: 700px;
+    padding: 40px;
+    order: unset;
+  }
 `;
 
 export const Banner = styled.img`
-  height: 700px;
   float: left;
+  width: 100%;
+  order: 1;
+  @media (min-width: ${media.screeenLgMin}) {
+    height: 700px;
+  }
 `;

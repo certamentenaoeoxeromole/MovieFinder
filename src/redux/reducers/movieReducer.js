@@ -5,7 +5,8 @@ const init = {
   error: false,
   requestSearchLoad: false,
   genres: null,
-  currentMovie: null
+  currentMovie: null,
+  pagination: null
 };
 
 const movieReducer = (state = init, action) => {
@@ -27,6 +28,15 @@ const movieReducer = (state = init, action) => {
     }
     case Types.SUCESS_MOVIE_API: {
       return { ...state, ...action.payload };
+    }
+    case Types.SET_PAGINATION: {
+      return {
+        ...state,
+        pagination: {
+          ...state.pagination,
+          currentPagination: action.payload.currentPagination
+        }
+      };
     }
     default:
       return state;

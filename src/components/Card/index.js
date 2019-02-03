@@ -32,19 +32,28 @@ class Card extends Component {
     } = this.props;
     return (
       <CardContaienr>
-        <CardImage
-          src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
-          title={title}
-        />
+        <picture>
+          <source
+            srcSet={`http://image.tmdb.org/t/p/w780//${poster_path}`}
+            media="(min-width: 481px) and (max-width:767px)"
+          />
+          <CardImage
+            src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
+            title={title}
+            alt={title}
+          />
+        </picture>
         <Flex direction="column">
           <CardHeader>
-            <CardHat>{title}</CardHat>
+            <CardHat title={title}>{title}</CardHat>
             <Radius value={popularity} />
           </CardHeader>
           <CardContent>
             <Date value={release_date} float={true} />
             <LetContainer>
-              <Sinopse>{overview || this.state.messageNotFoudSinpose}</Sinopse>
+              <Sinopse title={overview}>
+                {overview || this.state.messageNotFoudSinpose}
+              </Sinopse>
               <div>
                 <Tags genresIds={genre_ids} />
               </div>
