@@ -5,6 +5,8 @@ import { Font, ResetCSS } from "~/theme/index";
 import { Provider } from "react-redux";
 import store from "~/redux/store/index";
 
+import * as serviceWorker from "./serviceWorker";
+
 ReactDOM.render(
   <Provider store={store}>
     <Template />
@@ -13,3 +15,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("MovieFinder")
 );
+
+serviceWorker.register();

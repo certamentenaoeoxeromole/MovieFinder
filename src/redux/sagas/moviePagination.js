@@ -16,6 +16,7 @@ const pagination = response => {
       moviePagined.push(tempArray);
       tempArray = [];
     }
+    return false;
   });
 
   return {

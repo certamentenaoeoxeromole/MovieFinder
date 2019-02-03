@@ -18,7 +18,7 @@ class Card extends Component {
   constructor() {
     super();
     this.state = {
-      messageNotFoudSinpose: "Sinopse Indisponivel."
+      messageNotFound: "Sinopse Indisponivel."
     };
   }
   render() {
@@ -36,6 +36,7 @@ class Card extends Component {
           <source
             srcSet={`http://image.tmdb.org/t/p/w780//${poster_path}`}
             media="(min-width: 481px) and (max-width:767px)"
+            alt={title}
           />
           <CardImage
             src={`http://image.tmdb.org/t/p/w342//${poster_path}`}
@@ -52,7 +53,7 @@ class Card extends Component {
             <Date value={release_date} float={true} />
             <LetContainer>
               <Sinopse title={overview}>
-                {overview || this.state.messageNotFoudSinpose}
+                {overview || this.state.messageNotFound}
               </Sinopse>
               <div>
                 <Tags genresIds={genre_ids} />

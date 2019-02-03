@@ -31,7 +31,11 @@ export const CardImage = styled.img`
 export const CardContent = styled.div`
   width: 100%;
   background-color: ${variablesColors.gray};
-  height: calc(492px - ${headerHeight});
+  padding-bottom: 20px;
+
+  @media (min-width: ${media.screenSmMin}) {
+    height: calc(492px - ${headerHeight});
+  }
 `;
 
 export const Sinopse = styled.div`
@@ -47,11 +51,18 @@ export const CardHeader = styled.header`
 
   background-color: ${variablesColors.blueDark};
   width: 100%;
-  height: ${headerHeight};
-  position: relative;
-  padding-bottom: 10px;
 
+  position: relative;
+  margin-top: -3px;
+  padding: 20px 0;
   box-sizing: border-box;
+
+  @media (min-width: ${media.screenSmMin}) {
+    height: ${headerHeight};
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin-top: 0;
+  }
 `;
 
 export const CardHat = styled.h2`

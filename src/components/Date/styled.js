@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { variablesColors, variablesFonts } from "~/theme/index";
 
 export const DateContainer = styled.div`

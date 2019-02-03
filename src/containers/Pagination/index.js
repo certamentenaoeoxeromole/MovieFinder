@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Radius } from "~/components/index";
 import { bindActionCreators } from "redux";
 
 import { setPagination } from "~/redux/actions/movieAction";
@@ -12,12 +11,15 @@ import {
 } from "./styled";
 class Pagination extends Component {
   renderPagination = () => {
-    if (this.props.state.pagination) {
-      console.log(this.props.state.pagination);
+    const { pagination, requestSearchLoad } = this.props.state;
+    if (requestSearchLoad) {
+      return;
+    }
+    if (pagination) {
       const { totalPag, currentPagination } = this.props.state.pagination;
       return totalPag.map(item => {
         return (
-          <PaginationItem onClick={() => this.setPage(item)}>
+          <PaginationItem onClick={() => this.setPage(item)} key={item}>
             {item === currentPagination ? (
               <PaginationActive>{item}</PaginationActive>
             ) : (
@@ -34,7 +36,6 @@ class Pagination extends Component {
   };
 
   render() {
-    console.log(this.props);
     return <PaginationContainer>{this.renderPagination()}</PaginationContainer>;
   }
 }

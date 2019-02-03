@@ -52,7 +52,6 @@ function* getApiGenres() {
 }
 
 function* getMovieDetails({ payload }) {
-  yield console.log(payload.id);
   try {
     const { options } = movie(payload.id);
     const response = yield call(api.get, options.url);

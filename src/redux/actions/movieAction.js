@@ -1,5 +1,4 @@
 import Types from "~/redux/types/index";
-import api from "~/services/api";
 
 export const handleSearch = e => ({
   type: Types.HANDLE_SEARCH,
@@ -17,12 +16,9 @@ export const getApiMovie = id => ({
   payload: { id }
 });
 
-export const setPagination = page => {
-  console.log("enter");
-  return {
-    type: Types.SET_PAGINATION,
-    payload: {
-      currentPagination: page
-    }
-  };
-};
+export const setPagination = page => ({
+  type: Types.SET_PAGINATION,
+  payload: {
+    currentPagination: page
+  }
+});
