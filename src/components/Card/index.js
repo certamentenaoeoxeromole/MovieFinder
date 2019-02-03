@@ -42,10 +42,12 @@ class Card extends Component {
             <Radius value={popularity} />
           </CardHeader>
           <CardContent>
-            <Date value={release_date} />
+            <Date value={release_date} float={true} />
             <LetContainer>
               <Sinopse>{overview || this.state.messageNotFoudSinpose}</Sinopse>
-              <Tags genresIds={genre_ids} />
+              <div>
+                <Tags genresIds={genre_ids} />
+              </div>
             </LetContainer>
           </CardContent>
         </Flex>

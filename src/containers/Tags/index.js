@@ -19,7 +19,7 @@ class Tags extends Component {
           return genre.id === this.props.genresIds[index];
         })
         .map((item, index) => (
-          <TagsContainer key={index}>
+          <TagsContainer key={index + 1}>
             <TagsHat>{item.name}</TagsHat>
           </TagsContainer>
         ));
@@ -27,7 +27,7 @@ class Tags extends Component {
   };
 
   render() {
-    return this.renderTag() || <Fragment />;
+    return this.renderTag() || <span />;
   }
 }
 

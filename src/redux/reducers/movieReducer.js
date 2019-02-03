@@ -3,7 +3,7 @@ const init = {
   searchValue: "",
   movies: null,
   error: false,
-  loading: false,
+  requestSearchLoad: false,
   genres: null,
   currentMovie: null
 };
@@ -14,10 +14,10 @@ const movieReducer = (state = init, action) => {
       return { ...state, ...action.payload };
     }
     case Types.REQUEST_SEACH_API: {
-      return { ...state, loading: true };
+      return { ...state, requestSearchLoad: true };
     }
     case Types.SUCESS_SEARCH_API: {
-      return { ...state, ...action.payload };
+      return { ...state, ...action.payload, requestSearchLoad: false };
     }
     case Types.ERROR_SEARCH_API: {
       return { ...state, ...action.payload };

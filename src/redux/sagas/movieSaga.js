@@ -7,7 +7,11 @@ import Types from "~/redux/types/index";
 function* getApiData(data) {
   try {
     const query = data.payload.searchValue;
+    if (query === "") {
+      return;
+    }
     yield put({ type: Types.REQUEST_SEACH_API });
+    yield delay(1000);
     const response = yield call(api.get, movies.options.url + query);
     yield put({
       type: Types.SUCESS_SEARCH_API,
@@ -32,7 +36,14 @@ function* getApiGenres() {
         genres: response.data.genres
       }
     });
-  } catch (error) {}
+  } catch (error) {
+    yield put({
+      type: Types.ERROR_SEARCH_API,
+      payload: {
+        error
+      }
+    });
+  }
 }
 
 function* getMovieDetails({ payload }) {
@@ -46,7 +57,14 @@ function* getMovieDetails({ payload }) {
         currentMovie: response.data
       }
     });
-  } catch (error) {}
+  } catch (error) {
+    yield put({
+      type: Types.ERROR_SEARCH_API,
+      payload: {
+        error
+      }
+    });
+  }
 }
 
 export function* watchGetApiGenres() {

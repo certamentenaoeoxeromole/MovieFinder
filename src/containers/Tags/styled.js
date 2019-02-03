@@ -6,17 +6,15 @@ export const TagsContainer = styled.div`
   border-radius: 20px;
   border: 1px solid ${variablesColors.blueDark};
   height: 30px;
-  padding: 3px;
+  padding: 6px;
+  margin-top: 20px;
 
   display: inline-flex;
   justify-content: center;
   align-items: center;
 
-  margin-left: 10px;
-  margin-top: 20px;
-
-  &:nth-child(2) {
-    margin-left: 0px;
+  &:nth-child(n + 2) {
+    margin-left: 10px;
   }
 `;
 
