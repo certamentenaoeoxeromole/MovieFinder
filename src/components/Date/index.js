@@ -1,6 +1,7 @@
 import React from "react";
-import { DateContainer, DateHat } from "./styled.js";
 import PropTypes from "prop-types";
+
+import { DateContainer, DateHat } from "./styled";
 
 const Date = ({ value, float }) => {
   const dateSplited = value.split("-");
@@ -14,7 +15,7 @@ const Date = ({ value, float }) => {
 };
 
 Date.propTypes = {
-  value: PropTypes.array.isRequired,
+  value: PropTypes.string.isRequired,
   float: PropTypes.bool
 };
 

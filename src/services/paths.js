@@ -15,6 +15,6 @@ export const genres = {
 
 export const movie = id => ({
   options: {
-    url: `movie/${id}?api_key=${key}&${language}`
+    url: `movie/${id}?api_key=${key}&${language}&append_to_response=videos`
   }
 });

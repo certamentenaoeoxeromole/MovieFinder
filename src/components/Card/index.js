@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+
+import { Date } from "~/components/index";
+import { Tags } from "~/containers/index";
+
+import { Flex, RadiusMoviesList, RadiusHat } from "~/theme/index";
 import {
   CardContaienr,
   CardImage,
@@ -8,11 +13,6 @@ import {
   Sinopse,
   LetContainer
 } from "./styled";
-
-import { Radius, Date } from "~/components/index";
-import { Tags } from "~/containers/index";
-
-import { Flex } from "~/theme/index";
 
 class Card extends Component {
   constructor() {
@@ -47,7 +47,9 @@ class Card extends Component {
         <Flex direction="column">
           <CardHeader>
             <CardHat title={title}>{title}</CardHat>
-            <Radius value={popularity} />
+            <RadiusMoviesList>
+              <RadiusHat>{Math.round(popularity)}%</RadiusHat>
+            </RadiusMoviesList>
           </CardHeader>
           <CardContent>
             <Date value={release_date} float={true} />

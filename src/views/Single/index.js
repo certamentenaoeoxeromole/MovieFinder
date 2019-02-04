@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Movie } from "~/containers/index";
 
 const Single = props => {

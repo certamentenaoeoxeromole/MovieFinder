@@ -93,3 +93,14 @@ export const Banner = styled.img`
     height: 700px;
   }
 `;
+
+export const TrailerButton = styled.button`
+  margin-top: 30px;
+  padding: 8px;
+  background-color: unset;
+  border: 1px solid ${variablesColors.blueDark};
+  color: ${variablesColors.blueDark};
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+`;

@@ -4,12 +4,15 @@ import { bindActionCreators } from "redux";
 
 import { setPagination } from "~/redux/actions/movieAction";
 
-import {
-  PaginationContainer,
-  PaginationItem,
-  PaginationActive
-} from "./styled";
+import { RadiusPagination, RadiusHat } from "~/theme/index";
+
+import { PaginationContainer, PaginationItem } from "./styled";
+
 class Pagination extends Component {
+  setPage = page => {
+    this.props.setPagination(page);
+  };
+
   renderPagination = () => {
     const { pagination, requestSearchLoad } = this.props.state;
     if (requestSearchLoad) {
@@ -21,7 +24,9 @@ class Pagination extends Component {
         return (
           <PaginationItem onClick={() => this.setPage(item)} key={item}>
             {item === currentPagination ? (
-              <PaginationActive>{item}</PaginationActive>
+              <RadiusPagination>
+                <RadiusHat>{item}</RadiusHat>
+              </RadiusPagination>
             ) : (
               item
             )}
@@ -29,10 +34,6 @@ class Pagination extends Component {
         );
       });
     }
-  };
-
-  setPage = page => {
-    this.props.setPagination(page);
   };
 
   render() {
