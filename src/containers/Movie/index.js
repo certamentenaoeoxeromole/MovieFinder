@@ -146,7 +146,7 @@ class Movie extends Component {
                     Assistir Trailer
                   </TrailerButton>
                 ) : (
-                  <TrailerButton>Trailer Indisponivel</TrailerButton>
+                  <TrailerButton>Trailer Indisponível</TrailerButton>
                 )}
                 <RadiusSingle>
                   <RadiusHat>{Math.round(popularity)}%</RadiusHat>

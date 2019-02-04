@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { media } from "./variables";
+
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
@@ -9,7 +11,7 @@ const Container = styled.div`
   @media (min-width: 768px) {
     width: 740px;
   }
-  @media (min-width: 992px) {
+  @media (min-width: ${media.screeenLgMin}) {
     width: 960px;
   }
   @media (min-width: 1280px) {

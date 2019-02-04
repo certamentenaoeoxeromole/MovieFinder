@@ -11,7 +11,7 @@ export const CardContaienr = styled.article`
   cursor: pointer;
   display: flex;
 
-  @media (min-width: ${media.screenSmMin}) {
+  @media (min-width: ${media.screenMdMin}) {
     flex-direction: row;
   }
   margin-bottom: 20px;
@@ -22,7 +22,7 @@ export const CardImage = styled.img`
   overflow: unset;
   flex: 0 0 342px;
 
-  @media (min-width: ${media.screenSmMin}) {
+  @media (min-width: ${media.screenMdMin}) {
     width: 342px;
     height: 492px;
   }
@@ -33,7 +33,7 @@ export const CardContent = styled.div`
   background-color: ${variablesColors.gray};
   padding-bottom: 20px;
 
-  @media (min-width: ${media.screenSmMin}) {
+  @media (min-width: ${media.screenMdMin}) {
     height: calc(492px - ${headerHeight});
   }
 `;
@@ -57,7 +57,7 @@ export const CardHeader = styled.header`
   padding: 20px 0;
   box-sizing: border-box;
 
-  @media (min-width: ${media.screenSmMin}) {
+  @media (min-width: ${media.screenMdMin}) {
     height: ${headerHeight};
     padding-bottom: 10px;
     padding-top: 0px;

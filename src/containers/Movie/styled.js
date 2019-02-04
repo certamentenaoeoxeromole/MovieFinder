@@ -4,18 +4,25 @@ import { variablesColors, media } from "~/theme/index";
 export const MovieHeader = styled.header`
   background-color: ${variablesColors.grayDark};
   width: 100%;
-  height: 100px;
-  padding: 0 40px;
+  padding: 10px 40px;
   margin-top: 30px;
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  @media (min-width: ${media.screenMdMin}) {
+    height: 100px;
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const MovieHat = styled.h2`
   color: ${variablesColors.blueDark};
   font-size: 37px;
+  margin-bottom: 10px;
 `;
 
 export const MovieDescription = styled.p`
