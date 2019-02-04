@@ -19,20 +19,17 @@ class Modal extends Component {
     const { onClick, id } = this.props;
     return (
       <ModalContainer>
-        <ModalContent height={"450px"}>
+        <ModalContent>
           <ModalClose onClick={() => onClick()}>
             <div>x</div>
           </ModalClose>
-          <ModalBody backgroundColor="#e0e6ed">
+          <ModalBody>
             <iframe
               width="100%"
               title={"Modal"}
               height="100%"
-              src={
-                "https://www.youtube.com/embed/" +
-                id +
-                "?enablejsapi=1&version=3&playerapiid=ytplayer&amp;autoplay=1"
-              }
+              src={`
+              https://www.youtube.com/embed/${id}?enablejsapi=1&version=3&playerapiid=ytplayer&amp;autoplay=1`}
               frameBorder="0"
               allow="encrypted-media"
               allowFullScreen

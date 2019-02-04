@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
@@ -24,7 +24,7 @@ class Tags extends Component {
   };
 
   render() {
-    return this.renderTag() || <span />;
+    return this.renderTag() || <Fragment />;
   }
 }
 
