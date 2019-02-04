@@ -6,7 +6,7 @@
 
 ```sh
 $ yarn install
-$ npm start
+$ yarn start
 ```
 
 ## Author
@@ -17,8 +17,8 @@ $ npm start
 
 ### :question: Technologies
 
-- Semantic HTML, CSS Pesponsive :heart:
+- Semantic HTML, CSS Responsive :heart:
 - React, Redux, Redux Saga :heart:
 - Styled Components :heart:
 - PWA :heart:
-- Good Pratics Development
+- Good Pratics Development :heart:
