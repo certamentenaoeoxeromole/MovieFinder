@@ -25,7 +25,7 @@ export const RadiusHat = styled.h4`
 export const RadiusSingle = styled(RadiusContainer)`
   position: absolute;
   right: 0;
-  top: 48%;
+  top: 58%;
   margin-right: 30px;
   margin-bottom: 30px;
   width: 120px;
