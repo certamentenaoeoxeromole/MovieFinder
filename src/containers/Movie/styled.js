@@ -8,14 +8,19 @@ export const MovieHeader = styled.header`
   margin-top: 30px;
 
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
 
   @media (min-width: ${media.screenMdMin}) {
     height: 100px;
-    flex-direction: row;
-    align-items: center;
+    padding: 0;
+    > div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
   }
 `;
 
@@ -39,13 +44,30 @@ export const MovieTitle = styled.h2`
   border-bottom: 2px solid ${variablesColors.blueLight};
   padding-bottom: 10px;
 `;
-export const MovieContainer = styled.section``;
+export const MovieContainer = styled.section`
+  width: 100%;
+  @media (min-width: ${media.screeenLgMin}) {
+    width: 1280px;
+    margin: 0 auto;
+  }
+`;
+
+export const MovieFullWidth = styled.div`
+  width: 100%;
+  background-color: ${variablesColors.gray};
+`;
 
 export const MovieContent = styled.article`
   display: flex;
   flex-direction: column;
-  @media (min-width: ${media.screeenLgMin}) {
-    flex-direction: row;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: ${media.screeenLgMin}) {
+      flex-direction: row;
+    }
   }
 `;
 export const DataBlock = styled.div`
@@ -87,8 +109,9 @@ export const Informations = styled.div`
   @media (min-width: ${media.screeenLgMin}) {
     width: calc(100% - 466.66px);
     height: 700px;
-    padding: 40px;
+    padding: 0;
     order: unset;
+    padding-top: 20px;
   }
 `;
 

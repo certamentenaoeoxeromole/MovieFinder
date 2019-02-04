@@ -9,9 +9,12 @@ import { Modal } from "~/containers/index";
 
 import { RadiusSingle, RadiusHat } from "~/theme/index";
 
+import { Container } from "~/theme/index";
+
 import {
   MovieHeader,
   MovieContainer,
+  MovieFullWidth,
   MovieContent,
   MovieHat,
   MovieTitle,
@@ -122,13 +125,15 @@ class Movie extends Component {
       } = this.props.state.currentMovie;
 
       return (
-        <Fragment>
-          <MovieContainer>
-            <MovieHeader>
+        <MovieFullWidth>
+          <MovieHeader>
+            <Container>
               <MovieHat title={title}>{title}</MovieHat>
               <Date value={release_date} float={false} />
-            </MovieHeader>
-            <MovieContent>
+            </Container>
+          </MovieHeader>
+          <MovieContent>
+            <Container>
               <Informations>
                 <MovieTitle>Sinopse</MovieTitle>
                 <MovieDescription title={overview}>
@@ -163,10 +168,10 @@ class Movie extends Component {
                   alt={title}
                 />
               </picture>
-            </MovieContent>
-          </MovieContainer>
+            </Container>
+          </MovieContent>
           {this.renderModal()}
-        </Fragment>
+        </MovieFullWidth>
       );
     }
   };
